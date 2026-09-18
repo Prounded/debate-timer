@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debate Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phaseDisplay">
+        <div class="currentPhaseDisplay"></div>
+    </div>
+    <div class="timerMaxDisplay">
+        <div class="timerMax"></div>
+    </div>
+
+    <div class="mainTimerDisplay">
+        <div class="minuteTimer">00</div>
+        <div class="timerUnit">m</div>
+
+        <div class="secondTimer">00</div>
+        <div class="timerUnit">s</div>
+    </div>
+
+    <div class="controlButtons">
+        <button class="pauseButton animatedButton"><span>Pause</span></button>
+        <button class="interruptionButton animatedButton"><span>Interupsi</span></button>
+        <button class="startButton animatedButton"><span>Start</span></button>
+    </div>
+
+
+    <div class="dropdownDisplay">
+        <div class="dropdown">
+
+            <button class="dropdownButton">
+                <span class="selectedPhase">Case Building</span>
+                <span class="arrow">&#x2304;</span>
+            </button>
+        
+            <div class="dropdownMenu">
+                <div class="dropdownOption">Case Building</div>
+                <div class="dropdownOption">Pembicara Pertama Pemerintah</div>
+                <div class="dropdownOption">Pembicara Pertama Oposisi</div>
+                <div class="dropdownOption">Pembicara Kedua Pemerintah</div>
+                <div class="dropdownOption">Pembicara Kedua Oposisi</div>
+                <div class="dropdownOption">Pembicara Ketiga Pemerintah</div>
+                <div class="dropdownOption">Pembicara Ketiga Oposisi</div>
+                <div class="dropdownOption">Pembicara Penyimpul Oposisi</div>
+                <div class="dropdownOption">Pembicara Penyimpul Pemerintah</div>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="nextPhaseDisplay">
+        <button class="nextPhaseButton animatedButton"><span>Next Phase</span></button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

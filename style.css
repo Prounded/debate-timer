@@ -1,0 +1,246 @@
+html{
+    margin: 0;
+    padding: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #0B1F33;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter_18pt-Regular.ttf');
+}
+
+.phaseDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.currentPhaseDisplay{
+    font-size: 3rem;
+    font-weight: bold;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-transform: capitalize;
+}
+
+.timerMaxDisplay{
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.mainTimerDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 10rem;
+    padding-left: 2rem;
+    margin-top: 10dvh;
+}
+
+.timerUnit{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.controlButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.7rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #3a3a3f;
+    color: #ffffff;
+    margin: 0 20px;
+}
+
+.nextPhaseDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.nextPhaseButton::before{
+    background-color: #5870c7;
+    font-size: 1rem;
+}
+
+.nextPhaseButton{
+    background-color: #4558a0;
+    font-size: 1rem;
+}
+
+.startButton::before{
+    background-color: #6cab6b;
+    font-size: 1rem;
+}
+
+.startButton{
+    background-color: #44b14d;
+    font-size: 1rem;
+}
+
+.interruptionButton{
+    background-color: #cc5e36;
+    font-size: 1rem;
+}
+
+.animatedButton span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.animatedButton::before,
+.animatedButton::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.animatedButton::before {
+    content: "";
+    background: #303030;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.animatedButton:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.dropdownDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.dropdown {
+    position: relative;
+    width: 350px;
+    display: flex;
+    font-family: "Inter", sans-serif;
+}
+
+.dropdownButton {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #29445C;
+    border-radius: 10px;
+    background-color: #0B1F33;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.minuteTimer, .secondTimer{
+    width: 13rem;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 6px 0;
+    background-color: #0B1F33;
+    border: 1px solid #29445C;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease,
+        visibility 0.15s;
+    z-index: 100;
+}
+
+.dropdown.open .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.dropdown.open .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdownOption {
+    padding: 11px 16px;
+    color: #D9E2EA;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.dropdownOption:hover {
+    background-color: #183A56;
+    color: white;
+}
+
+.timerIsUp{
+    color: #FF0000;
+}
+
+.nointerruptionTime{
+    color: #c1db62;
+}
