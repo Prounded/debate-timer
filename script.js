@@ -1,6 +1,6 @@
 const timeSettings = {
 	Case_Building: [600], // 10 minutes in seconds
-	Pembicara_Pertama: [60, 240, 300], // 1 minute, 4 minutes, 5 minutes in seconds
+	Pembicara_Pertama: [1, 240, 300], // 1 minute, 4 minutes, 5 minutes in seconds
 	Pembicara_Kedua: [60, 360, 420], // 1 minute, 6 minutes, 7 minutes in seconds
 	Pembicara_Ketiga: [60, 360, 420], // 1 minute, 6 minutes, 7 minutes in seconds
 	Penyimpul: [180], // 3 minutes in seconds
@@ -127,7 +127,6 @@ document.querySelector('.interruptionButton').addEventListener('click', () => {
 		timerinterruptionType = false;
 		interruptionTime = false;
 		interruptionTimeCount = 0;
-		startTime = true;
 		mainTimerDisplay.classList.remove('timerIsUp'); 
 		time--;
 
@@ -138,7 +137,19 @@ document.querySelector('.interruptionButton').addEventListener('click', () => {
 
 
 		document.querySelector('.currentPhaseDisplay').textContent = currentPhase;
-		updateTimerDisplay();
+		const minutes = Math.floor(time / 60);
+		const seconds = time % 60;
+
+		const minuteTimer = document.querySelector('.minuteTimer');
+		const secondTimer = document.querySelector('.secondTimer');
+
+		minuteTimer.textContent = minutes.toString().padStart(2, '0');
+		secondTimer.textContent = seconds.toString().padStart(2, '0');
+		mainTimerDisplay.classList.remove('nointerruptionTime');
+		setTimeout(() => {
+			startTime = true;
+			updateTimerDisplay();
+		}, 1000);
 		return;
 	}
 
