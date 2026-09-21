@@ -1,6 +1,6 @@
 const timeSettings = {
 	Case_Building: [600], // 10 minutes in seconds
-	Pembicara_Pertama: [1, 240, 300], // 1 minute, 4 minutes, 5 minutes in seconds
+	Pembicara_Pertama: [60, 240, 300], // 1 minute, 4 minutes, 5 minutes in seconds
 	Pembicara_Kedua: [60, 360, 420], // 1 minute, 6 minutes, 7 minutes in seconds
 	Pembicara_Ketiga: [60, 360, 420], // 1 minute, 6 minutes, 7 minutes in seconds
 	Penyimpul: [180], // 3 minutes in seconds
